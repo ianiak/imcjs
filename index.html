@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="section">
+    <header>
+    <nav class="navbar">
+        <div class="logo">
+        <img src="https://cdn-icons-png.freepik.com/256/4811/4811032.png?semt=ais_hybrid" alt="" id="logoicon">
+        <h2>Life's lab</h2>
+    </div>
+        <ul>
+            <li><a href="#">Imc</a></li>
+            <li><a href="#">Inicio</a></li>
+            <li><button onclick="colorModes()"><img src="https://static-00.iconduck.com/assets.00/dark-theme-icon-1024x1024-oxftr06e.png" alt="" id="mds" ></button ></li>
+        </ul>
+    </nav>
+</header>
+<section >
+    <div class="container" id="container">
+        <img src="https://cdn-icons-png.freepik.com/256/4811/4811032.png?semt=ais_hybrid" alt="" id="imcicon">
+        <h1>Life's lab | IMC</h1>
+        <hr>
+    <label for="altura">Altura</label>
+    <input type="number" name="altura" id="altura" step="0.01">
+
+    <label for="peso">Peso</label>
+    <input type="number" name="peso" id="peso">
+
+    <button onclick="calcImc()" id="btn">Calcular IMC</button>
+
+    <p>Seu índice de massa corporal é: <span id="resultado"></span></p>
+</div>
+</section>
+<footer>
+    <p>&copy; João Gabriel</p>
+</footer>
+
+    <script>
+        function calcImc(){
+            const altura = document.getElementById("altura").value;
+            const peso = document.getElementById("peso").value;
+            const resultado = peso / (altura**2);
+
+            document.getElementById("resultado").textContent = resultado.toFixed(2);
+        }
+        function colorModes(){
+            const cor = document.getElementById("container");
+            const section = document.getElementById("section");
+
+            cor.style.backgroundColor = cor.style.backgroundColor === "aqua" ? "DarkSlateGray" : "aqua";
+            cor.style.color = cor.style.color === "black" ?"white" : "black";
+            section.style.backgroundColor = section.style.backgroundColor === "white" ? "SlateGray" : "white";
+        }
+    </script>
+</body>
+</html>
